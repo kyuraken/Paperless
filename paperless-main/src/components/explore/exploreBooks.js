@@ -1,28 +1,33 @@
 export const exploreBooks = [
   //Romance and Authors
-  {
-    id: "WJzvzgEACAAJ",
-    volumeInfo: {
-      title: "It Starts with Us",
-      authors: ["Colleen Hoover"],
-      publishedDate: "2022-10-18",
-      description:
-        "Before It Ends with Us, it started with Atlas. Colleen Hoover tells fan favourite Atlas' side of the story and shares what comes next in this long-anticipated sequel to the #1 Sunday Times bestseller It Ends with Us.",
-
-      categories: ["Fiction"],
-      imageLinks: {
-        smallThumbnail:
-          "http://books.google.com/books/content?id=WJzvzgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-        thumbnail:
-          "http://books.google.com/books/content?id=WJzvzgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-      },
+{
+  id: "0QPzDQAAQBAJ",
+  volumeInfo: {
+    title: "Attack on Titan",
+    authors: ["Hajime Isayama"],
+    publisher: "Kodansha Comics",
+    publishedDate: "2010",
+    pageCount: 196,
+    categories: ["Comics & Graphic Novels"],
+    imageLinks: {
+      smallThumbnail:
+        "http://books.google.com/books/content?id=0QPzDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      thumbnail:
+        "http://books.google.com/books/content?id=0QPzDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     },
-    searchInfo: {
-      textSnippet:
-        "Before It Ends with Us, it started with Atlas. Colleen Hoover tells fan favourite Atlas&#39; side of the story and shares what comes next in this long-anticipated sequel to the #1 Sunday Times bestseller It Ends with Us.",
-    },
-    subject: ["Picks", "Romance", "Colleen Hoover"],
+    language: "en",
+    previewLink:
+      "http://books.google.com/books?id=0QPzDQAAQBAJ&printsec=frontcover&source=gbs_api",
+    infoLink:
+      "https://play.google.com/store/books/details?id=0QPzDQAAQBAJ"
   },
+  searchInfo: {
+    textSnippet:
+      "Humanity’s last survivors live behind massive walls to protect themselves from the terrifying Titans that roam beyond. When the walls fall, Eren Yeager vows to fight back and uncover the truth behind the Titans in this action-packed manga epic."
+  },
+  subject: ["Picks", "Manga", "Anime", "Fantasy"]
+}
+,
 
   {
     id: "wmnuDwAAQBAJ",
