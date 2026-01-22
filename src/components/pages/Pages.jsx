@@ -6,6 +6,7 @@ import Library from "./Library";
 import Search from "./Search";
 import Explore from "./Explore";
 import Shelves from "./Shelves";
+import Share from "./Share";
 import NoMatch from "../helpers/routes/NoMatch";
 import BookDetails from "../books/BookDetails";
 import ProtectedRoute from "../helpers/routes/ProtectedRoute";
@@ -94,6 +95,15 @@ const Pages = () => {
           element={
             <ProtectedRoute>
               <Shelves />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/share"
+          element={
+            <ProtectedRoute>
+              <Share />
             </ProtectedRoute>
           }
         />

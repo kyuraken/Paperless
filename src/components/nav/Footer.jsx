@@ -29,6 +29,11 @@ const Footer = () => {
               <Link to="/shelves">Shelves</Link>
             </li>
           )}
+          {isSignedIn && (
+            <li>
+              <Link to="/share">Share</Link>
+            </li>
+          )}
         </ul>
       </Container>
       <ul className={styled.copyright}>

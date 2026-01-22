@@ -81,6 +81,13 @@ const Navbar = () => {
                   </Link>
                 </li>
               )}
+              {isSignedIn && (
+                <li>
+                  <Link style={navStyle} to="/share">
+                    Share
+                  </Link>
+                </li>
+              )}
             </ul>
 
             <div className={styled.nav__group}>
