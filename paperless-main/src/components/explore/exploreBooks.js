@@ -797,7 +797,7 @@ export const exploreBooks = [
         "For thirty-five girls, the Selection is the chance of a lifetime.",
     },
 
-    subject: ["Picks", "Fiction, Fantasy", "Tiktok"],
+    subject: ["Picks", "Fiction", "Fantasy", "Tiktok"],
   },
 
   {
@@ -1028,5 +1028,215 @@ export const exploreBooks = [
         "I&#39;ll put my heart and soul into dressing his holiday windows. I&#39;ll work without stopping. And when we lose the battle with temptation, I&#39;ll try and remember I&#39;m just window shopping&quot;--back cover.",
     },
     subject: ["Picks", "Easy Reads"],
+  },
+
+  {
+    id: "3KpmtgEACAAJ",
+    volumeInfo: {
+      title: "The Kiss Quotient",
+      authors: ["Helen Hoang"],
+      publishedDate: "2018-05-08",
+      categories: ["Romance"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=3KpmtgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=3KpmtgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A math genius hires an escort to learn about romance, and the plan turns into something real.",
+    },
+    subject: ["Picks", "Romance"],
+  },
+
+  {
+    id: "1I1xDwAAQBAJ",
+    volumeInfo: {
+      title: "Red, White & Royal Blue",
+      authors: ["Casey McQuiston"],
+      publishedDate: "2019-05-14",
+      categories: ["Romance"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=1I1xDwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=1I1xDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "The First Son of the US and a British prince fall into a headline-making romance.",
+    },
+    subject: ["Picks", "Romance"],
+  },
+
+  {
+    id: "OlCHcjX0RT4C",
+    volumeInfo: {
+      title: "The Hobbit",
+      authors: ["J. R. R. Tolkien"],
+      publishedDate: "1937-09-21",
+      categories: ["Fantasy"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=OlCHcjX0RT4C&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=OlCHcjX0RT4C&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "Bilbo Baggins is swept into a quest with dwarves, a dragon, and a dangerous ring.",
+    },
+    subject: ["Picks", "Fantasy"],
+  },
+
+  {
+    id: "t_ZYYXZq4RgC",
+    volumeInfo: {
+      title: "Mistborn: The Final Empire",
+      authors: ["Brandon Sanderson"],
+      publishedDate: "2006-07-17",
+      categories: ["Fantasy"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=t_ZYYXZq4RgC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=t_ZYYXZq4RgC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A street thief discovers her power and joins a rebellion against a tyrant.",
+    },
+    subject: ["Picks", "Fantasy"],
+  },
+
+  {
+    id: "vNNhEAAAQBAJ",
+    volumeInfo: {
+      title: "The Great Gatsby",
+      authors: ["F. Scott Fitzgerald"],
+      publishedDate: "1925-04-10",
+      categories: ["Fiction"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=vNNhEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=vNNhEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A mysterious millionaire and a lost love collide in Jazz Age New York.",
+    },
+    subject: ["Picks", "Fiction"],
+  },
+
+  {
+    id: "RrGFuAP-Jd8C",
+    volumeInfo: {
+      title: "The Night Circus",
+      authors: ["Erin Morgenstern"],
+      publishedDate: "2011-09-13",
+      categories: ["Fiction"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=RrGFuAP-Jd8C&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=RrGFuAP-Jd8C&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "Two rival magicians build a magical circus and fall in love across a decades-long duel.",
+    },
+    subject: ["Picks", "Fiction"],
+  },
+
+  {
+    id: "O0iSDwAAQBAJ",
+    volumeInfo: {
+      title: "The House in the Cerulean Sea",
+      authors: ["TJ Klune"],
+      publishedDate: "2020-03-17",
+      categories: ["Fiction"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=O0iSDwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=O0iSDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A caseworker inspects a magical orphanage and finds a family he never expected.",
+    },
+    subject: ["Picks", "Easy Reads"],
+  },
+
+  {
+    id: "SSEFMQAACAAJ",
+    volumeInfo: {
+      title: "Eleanor Oliphant Is Completely Fine",
+      authors: ["Gail Honeyman"],
+      publishedDate: "2017-05-09",
+      categories: ["Fiction"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=SSEFMQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=SSEFMQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A lonely woman finds friendship and starts to heal, one small change at a time.",
+    },
+    subject: ["Picks", "Easy Reads"],
+  },
+
+  {
+    id: "fV_wAQAAQBAJ",
+    volumeInfo: {
+      title: "One Piece, Vol. 1: Romance Dawn",
+      authors: ["Eiichiro Oda"],
+      publishedDate: "1997-12-24",
+      categories: ["Comics & Graphic Novels"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=fV_wAQAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=fV_wAQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A boy with rubber powers sets out to become King of the Pirates.",
+    },
+    subject: ["Picks", "Manga"],
+  },
+
+  {
+    id: "bQbwAQAAQBAJ",
+    volumeInfo: {
+      title: "Naruto, Vol. 1: Uzumaki Naruto",
+      authors: ["Masashi Kishimoto"],
+      publishedDate: "2003-08-06",
+      categories: ["Comics & Graphic Novels"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=bQbwAQAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=bQbwAQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A young ninja with a sealed beast seeks recognition in his village.",
+    },
+    subject: ["Picks", "Manga"],
   },
 ];

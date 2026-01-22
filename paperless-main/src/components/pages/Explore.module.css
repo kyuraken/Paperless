@@ -1,0 +1,13 @@
+.explore-layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+@media (min-width: 900px) {
+    .explore-layout {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+}

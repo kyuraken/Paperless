@@ -2,11 +2,15 @@ import React from "react";
 import styled from "./ExploreContent.module.css";
 import useExploreContent from "../../hooks/useExploreContent";
 
-const ExploreContent = () => {
+const ExploreContent = ({ activeGroup }) => {
   //custom hook to fetch books
   const contents = useExploreContent();
 
-  const renderContents = contents?.map((content) => {
+  const filteredContents = activeGroup
+    ? contents?.filter((content) => content.group === activeGroup)
+    : contents;
+
+  const renderContents = filteredContents?.map((content) => {
     return (
       <div key={content.title} id={content.link}>
         <section>
@@ -18,7 +22,9 @@ const ExploreContent = () => {
   });
 
   return (
-    <section className={styled["explore-content"]}>{renderContents}</section>
+    <section id="all" className={styled["explore-content"]}>
+      {renderContents}
+    </section>
   );
 };
 

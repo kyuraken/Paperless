@@ -1,51 +1,115 @@
 .explore-nav {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    height: 8.5vh;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
     border-bottom: 1px solid rgba(230, 230, 230, 0.688);
     margin-bottom: 2rem;
-    overflow-x: scroll;
-    scrollbar-width: none;
-}
-
-.explore-nav::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-    display: none;
-    /* Chrome */
+    padding-bottom: 1rem;
 }
 
 .title {
     display: none;
 }
 
+.group-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.group-button {
+    border: 1px solid rgba(230, 230, 230, 0.9);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--med-grey);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.45rem 0.85rem;
+    cursor: pointer;
+}
+
+.group-button-active {
+    border-color: var(--dark-blue);
+    background: var(--dark-blue);
+    color: #ffffff;
+}
+
 .links {
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.links::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    display: none;
+    /* Chrome */
 }
 
 .links li {
     min-width: max-content;
 }
 
-.links a {
-    font-weight: 400;
+.category-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(230, 230, 230, 0.9);
+    border-radius: 999px;
+    background: #ffffff;
+    font-weight: 500;
     color: var(--med-grey);
     text-decoration: none;
+    padding: 0.45rem 0.85rem;
+}
+
+.category-button-active {
+    border-color: var(--dark-blue);
+    background: rgba(16, 28, 79, 0.1);
+    color: var(--dark-blue);
 }
 
 
 /* Media Queries */
 
 @media (min-width:900px) {
+    .explore-nav {
+        order: 2;
+        height: auto;
+        min-width: 220px;
+        border-bottom: none;
+        border-left: 1px solid rgba(230, 230, 230, 0.688);
+        margin-bottom: 0;
+        padding-left: 1.5rem;
+    }
+
     .title {
         display: grid;
         font-size: 1rem;
         font-weight: bold;
         font-family: "Roboto", sans-serif;
         color: var(--dark-blue);
+    }
+
+    .links {
+        flex-direction: column;
+        overflow-x: visible;
+        width: 100%;
+    }
+
+    .links li {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .category-button {
+        width: 100%;
+        justify-content: flex-start;
     }
 }

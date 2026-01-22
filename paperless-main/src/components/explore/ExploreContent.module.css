@@ -28,3 +28,16 @@
     display: none;
     /* Chrome */
 }
+
+@media (min-width:900px) {
+    .explore-content {
+        margin-top: 0;
+        flex: 1;
+        min-width: 0;
+        order: 1;
+    }
+
+    .explore-books {
+        min-width: 0;
+    }
+}

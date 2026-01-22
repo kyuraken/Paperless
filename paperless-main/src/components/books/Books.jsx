@@ -34,9 +34,10 @@ const Books = (props) => {
   const showLibraryBookmark = props.showLibraryBookmark && isInLibrary;
   const showShelfBookmark = props.showShelfBookmark && isOnShelves;
 
-  const src = imageLinks
-    ? imageLinks.smallThumbnail
-    : "https://via.placeholder.com/128x193";
+  const src =
+    imageLinks?.smallThumbnail ||
+    imageLinks?.thumbnail ||
+    "https://via.placeholder.com/128x193";
 
   return (
     <>
