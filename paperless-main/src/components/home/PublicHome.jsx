@@ -23,25 +23,24 @@ const PublicHome = () => {
   //Hero Props
   const heroHeading = (
     <>
-      Your <span>online</span> bookshelf
+      Your <span>reliable</span> bookshelf
     </>
   );
 
   const heroText =
-    "The preferred bookmarking app for book lovers. Create your online bookshelf and add to your library anytime, anywhere. Stay organized with shelves and never lose track of a book again!";
-
+    "The go-to bookmarking app for book lovers. Build your online bookshelf, add books anytime, anywhere, and keep everything organized with custom shelves—so you never lose track of a book again.";
   const buttonText = "Start Organizing";
 
   // props to pass to the genre component
   const text = (
     <>
-      All your favourites in <span>one</span> place
+      Organize your books in <span>one</span> place
     </>
   );
 
   // props to pass to the genre component
   const paragraph =
-    "If you're looking for a way to keep track of all your favorite books, then Paperless is the app for you! Access all your favorites in one central location. Create your bookshelf and add all your favorite titles to it.";
+    "Looking for an easy way to keep track of your favorite books? Paperless brings all your favorites into one place. Create your own bookshelf and save every title you love.";
 
   // props to pass to the top picks component
 
@@ -67,7 +66,7 @@ const PublicHome = () => {
             Top picks of the <span>month</span>
           </>
         }
-        paragraph="These books are all great reads that will keep you entertained for hours on end. If you're looking for something new to read, be sure to check out one of these books!"
+        paragraph="Each of these books is a great read, perfect for hours of entertainment. Looking for your next book? Any of these titles is a great place to start."
       />
       <Booktok />
       <Review />

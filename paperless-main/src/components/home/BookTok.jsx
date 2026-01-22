@@ -14,7 +14,7 @@ const Booktok = () => {
   // props for heading component
   const heading = (
     <>
-      What side of <span>tiktok</span> are you on?
+      What side of <span>social media</span> are you on?
     </>
   );
 
@@ -29,10 +29,8 @@ const Booktok = () => {
             <Heading className="heading-md" text={heading} />
 
             <p className="para">
-              TikTok made me read it! We are staying up to date with #BookTok
-              and we've made it easier for you to see what's going viral. Add
-              these popular books to your collection and stay up-to-date on the
-              latest must-reads.
+Social media made me read it! We’re staying up to date with trending book content and making it easy for you to see what’s going viral. 
+Add these popular books to your collection and keep up with the latest must-reads.
             </p>
             <Button onClick={handleClick}>Explore</Button>
           </article>

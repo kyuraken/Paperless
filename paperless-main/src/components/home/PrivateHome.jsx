@@ -27,7 +27,7 @@ const PrivateHome = () => {
   );
 
   const heroText =
-    "Keep track of the books you've read, the books you're currently reading, the books you want to read and those hard to finish books.";
+    "Keep track of the books you’ve read, what you’re currently reading, what you want to read, and even those hard-to-finish books.";
 
   const buttonText = "Get Started";
 
@@ -59,7 +59,7 @@ const PrivateHome = () => {
             We think you <span>might like</span> these
           </>
         }
-        paragraph="Looking for something new and exciting to read? Check out these top picks for you. We are making it easier for you to get started with a curated list of some of our favourites."
+        paragraph="Looking for something new and exciting to read? Explore these top picks made just for you. We’ve made it easy to get started with a curated list of our favorites."
       />
       <div style={genre}>
         <Genre
