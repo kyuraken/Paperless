@@ -4,6 +4,7 @@ import Heading from "../helpers/heading/Heading";
 import styled from "./Share.module.css";
 import { useSelector } from "react-redux";
 import Modal from "../helpers/modal/Modal";
+import bookmark from "../../images/bookmark.png";
 import { onAuthStateChanged } from "firebase/auth";
 import {
   addDoc,
@@ -34,6 +35,9 @@ const Share = () => {
   });
   const [hideLikes, setHideLikes] = useState(() => {
     return localStorage.getItem("shareHideLikes") === "true";
+  });
+  const [customName, setCustomName] = useState(() => {
+    return localStorage.getItem("shareCustomName") || "";
   });
   const [editingPostId, setEditingPostId] = useState("");
   const [editingComment, setEditingComment] = useState("");
@@ -85,6 +89,10 @@ const Share = () => {
   }, [hideLikes]);
 
   useEffect(() => {
+    localStorage.setItem("shareCustomName", customName);
+  }, [customName]);
+
+  useEffect(() => {
     const unsub = onAuthStateChanged(auth, (firebaseUser) => {
       setProfile({
         name: firebaseUser?.displayName || "",
@@ -100,7 +108,7 @@ const Share = () => {
     if (!selectedBook || trimmed.length === 0) return;
 
     const { bookData } = selectedBook;
-    const displayName = profile.name || "Anonymous";
+    const displayName = customName.trim() || profile.name || "Anonymous";
     const photoUrl = profile.photo || "";
 
     setIsSubmitting(true);
@@ -266,6 +274,21 @@ const Share = () => {
                 <p className={styled.helper}>
                   When enabled, likes are disabled on new posts.
                 </p>
+                <label className={styled.label} htmlFor="custom-name">
+                  Custom name
+                </label>
+                <input
+                  id="custom-name"
+                  className={styled.input}
+                  type="text"
+                  value={customName}
+                  onChange={(event) => setCustomName(event.target.value)}
+                  placeholder="Display name for posts"
+                  disabled={isAnonymous}
+                />
+                <p className={styled.helper}>
+                  Leave blank to use your Google profile name.
+                </p>
               </div>
             )}
           </section>
@@ -351,9 +374,11 @@ const Share = () => {
                             alt={displayName}
                           />
                         ) : (
-                          <div className={styled.avatarFallback}>
-                            {initials}
-                          </div>
+                          <img
+                            className={styled.avatarFallback}
+                            src={bookmark}
+                            alt="Default avatar"
+                          />
                         )}
                         <div className={styled.postMeta}>
                           <span className={styled.postAuthor}>

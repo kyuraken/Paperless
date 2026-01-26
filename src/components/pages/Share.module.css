@@ -85,6 +85,21 @@
   background: var(--white);
 }
 
+.input {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-size: 0.95rem;
+  color: var(--dark-blue);
+  background: var(--white);
+}
+
+.input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .textarea {
   resize: vertical;
 }
@@ -156,12 +171,9 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
+  object-fit: cover;
   background: var(--light-grey);
-  color: var(--dark-blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
+  padding: 4px;
 }
 
 .postMeta {
