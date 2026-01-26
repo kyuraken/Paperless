@@ -3,9 +3,14 @@ import Container from "../helpers/container/Container";
 import Heading from "../helpers/heading/Heading";
 import styled from "./Share.module.css";
 import { useSelector } from "react-redux";
+import Modal from "../helpers/modal/Modal";
+import { onAuthStateChanged } from "firebase/auth";
 import {
   addDoc,
+  arrayRemove,
+  arrayUnion,
   collection,
+  deleteDoc,
   doc,
   onSnapshot,
   orderBy,
@@ -23,9 +28,20 @@ const Share = () => {
   const [selectedBookId, setSelectedBookId] = useState("");
   const [posts, setPosts] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
+  const [isAnonymous, setIsAnonymous] = useState(() => {
+    return localStorage.getItem("shareAnonymous") === "true";
+  });
+  const [hideLikes, setHideLikes] = useState(() => {
+    return localStorage.getItem("shareHideLikes") === "true";
+  });
   const [editingPostId, setEditingPostId] = useState("");
   const [editingComment, setEditingComment] = useState("");
   const [savingPostId, setSavingPostId] = useState("");
+  const [deletingPostId, setDeletingPostId] = useState("");
+  const [likingPostId, setLikingPostId] = useState("");
+  const [deleteTargetId, setDeleteTargetId] = useState("");
+  const [profile, setProfile] = useState({ name: "", photo: "" });
 
   const readingBooks = useMemo(() => {
     return library.filter((item) => item.category === "In Progress");
@@ -60,20 +76,42 @@ const Share = () => {
     return () => unsub();
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("shareAnonymous", String(isAnonymous));
+  }, [isAnonymous]);
+
+  useEffect(() => {
+    localStorage.setItem("shareHideLikes", String(hideLikes));
+  }, [hideLikes]);
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (firebaseUser) => {
+      setProfile({
+        name: firebaseUser?.displayName || "",
+        photo: firebaseUser?.photoURL || "",
+      });
+    });
+    return () => unsub();
+  }, []);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const trimmed = comment.trim();
     if (!selectedBook || trimmed.length === 0) return;
 
-    const currentUser = auth.currentUser;
     const { bookData } = selectedBook;
+    const displayName = profile.name || "Anonymous";
+    const photoUrl = profile.photo || "";
 
     setIsSubmitting(true);
     try {
       await addDoc(collection(database, "sharePosts"), {
         userId: user,
-        userName: currentUser?.displayName || "Anonymous",
-        userPhoto: currentUser?.photoURL || "",
+        userName: isAnonymous ? "Anonymous" : displayName,
+        userPhoto: isAnonymous ? "" : photoUrl,
+        isAnonymous,
+        hideLikes,
+        likes: [],
         comment: trimmed,
         bookData: {
           id: bookData.id,
@@ -125,6 +163,54 @@ const Share = () => {
     }
   };
 
+  const deletePost = async (postId) => {
+    setDeletingPostId(postId);
+    try {
+      await deleteDoc(doc(database, "sharePosts", postId));
+      if (editingPostId === postId) cancelEdit();
+    } catch (error) {
+      toast.error(error?.message || "Failed to delete your post.", {
+        autoClose: 5000,
+      });
+    } finally {
+      setDeletingPostId("");
+    }
+  };
+
+  const toggleLike = async (post) => {
+    if (!user || post.hideLikes) return;
+    const likes = Array.isArray(post.likes) ? post.likes : [];
+    const hasLiked = likes.includes(user);
+
+    setLikingPostId(post.id);
+    try {
+      await updateDoc(doc(database, "sharePosts", post.id), {
+        likes: hasLiked ? arrayRemove(user) : arrayUnion(user),
+        updatedAt: Date.now(),
+      });
+    } catch (error) {
+      toast.error(error?.message || "Failed to update likes.", {
+        autoClose: 5000,
+      });
+    } finally {
+      setLikingPostId("");
+    }
+  };
+
+  const confirmDelete = async () => {
+    if (!deleteTargetId) return;
+    await deletePost(deleteTargetId);
+    setDeleteTargetId("");
+  };
+
+  const getInitials = (name) => {
+    if (!name) return "A";
+    const parts = name.trim().split(" ").filter(Boolean);
+    const first = parts[0]?.[0] || "";
+    const last = parts.length > 1 ? parts[parts.length - 1][0] : "";
+    return `${first}${last}`.toUpperCase() || "A";
+  };
+
   const formatDate = (value) => {
     if (!value) return "";
     if (typeof value === "number") {
@@ -144,6 +230,45 @@ const Share = () => {
           <p className="para">
             Share your shelves and recommendations with friends in one place.
           </p>
+
+          <section className={styled.settings}>
+            <div className={styled.settingsHeader}>
+              <h2 className={styled.settingsTitle}>Settings</h2>
+              <button
+                type="button"
+                className={styled.settingsToggle}
+                onClick={() => setShowSettings((state) => !state)}
+              >
+                {showSettings ? "Hide" : "Show"}
+              </button>
+            </div>
+            {showSettings && (
+              <div className={styled.settingsPanel}>
+                <label className={styled.toggle}>
+                  <input
+                    type="checkbox"
+                    checked={isAnonymous}
+                    onChange={(event) => setIsAnonymous(event.target.checked)}
+                  />
+                  <span>Post anonymously</span>
+                </label>
+                <p className={styled.helper}>
+                  Your name will be hidden on new posts.
+                </p>
+                <label className={styled.toggle}>
+                  <input
+                    type="checkbox"
+                    checked={hideLikes}
+                    onChange={(event) => setHideLikes(event.target.checked)}
+                  />
+                  <span>Hide likes on my posts</span>
+                </label>
+                <p className={styled.helper}>
+                  When enabled, likes are disabled on new posts.
+                </p>
+              </div>
+            )}
+          </section>
 
           <form className={styled.form} onSubmit={handleSubmit}>
             <label className={styled.label} htmlFor="reading-book">
@@ -180,6 +305,9 @@ const Share = () => {
               onChange={(event) => setComment(event.target.value)}
               placeholder="Why are you enjoying this book?"
             />
+            {isAnonymous && (
+              <p className={styled.helper}>Posting as Anonymous.</p>
+            )}
 
             <button
               className={styled.submit}
@@ -201,25 +329,62 @@ const Share = () => {
                 const cover =
                   postBook.imageLinks?.smallThumbnail ||
                   postBook.imageLinks?.thumbnail;
+                const displayName = post.isAnonymous
+                  ? "Anonymous"
+                  : post.userName || "Reader";
+                const avatarUrl = post.isAnonymous
+                  ? ""
+                  : post.userPhoto || (canEdit ? profile.photo : "") || "";
+                const initials = getInitials(displayName);
+                const likes = Array.isArray(post.likes) ? post.likes : [];
+                const likeCount = likes.length;
+                const hasLiked = likes.includes(user);
+                const likesHidden = post.hideLikes === true;
                 return (
                   <article key={post.id} className={styled.post}>
                     <div className={styled.postHeader}>
-                      <div className={styled.postMeta}>
-                        <span className={styled.postAuthor}>
-                          {post.userName || "Reader"}
-                        </span>
-                        <span className={styled.postDate}>
-                          {formatDate(post.createdAt)}
-                        </span>
+                      <div className={styled.postIdentity}>
+                        {avatarUrl ? (
+                          <img
+                            className={styled.avatar}
+                            src={avatarUrl}
+                            alt={displayName}
+                          />
+                        ) : (
+                          <div className={styled.avatarFallback}>
+                            {initials}
+                          </div>
+                        )}
+                        <div className={styled.postMeta}>
+                          <span className={styled.postAuthor}>
+                            {displayName}
+                          </span>
+                          <span className={styled.postDate}>
+                            {formatDate(post.createdAt)}
+                          </span>
+                        </div>
                       </div>
                       {canEdit && (
-                        <button
-                          type="button"
-                          className={styled.edit}
-                          onClick={() => startEdit(post)}
-                        >
-                          Edit
-                        </button>
+                        <div className={styled.postActions}>
+                          <button
+                            type="button"
+                            className={styled.edit}
+                            onClick={() => startEdit(post)}
+                            disabled={deletingPostId === post.id}
+                          >
+                            Edit
+                          </button>
+                          <button
+                            type="button"
+                            className={styled.delete}
+                            onClick={() => setDeleteTargetId(post.id)}
+                            disabled={deletingPostId === post.id}
+                          >
+                            {deletingPostId === post.id
+                              ? "Deleting..."
+                              : "Delete"}
+                          </button>
+                        </div>
                       )}
                     </div>
 
@@ -274,6 +439,25 @@ const Share = () => {
                         ) : (
                           <p className={styled.comment}>{post.comment}</p>
                         )}
+                        {!likesHidden ? (
+                          <div className={styled.likeRow}>
+                            <button
+                              type="button"
+                              className={styled.likeButton}
+                              onClick={() => toggleLike(post)}
+                              disabled={likingPostId === post.id}
+                            >
+                              {hasLiked ? "Unlike" : "Like"}
+                            </button>
+                            <span className={styled.likeCount}>
+                              {likeCount} {likeCount === 1 ? "like" : "likes"}
+                            </span>
+                          </div>
+                        ) : (
+                          <p className={styled.likesHidden}>
+                            Likes disabled by author.
+                          </p>
+                        )}
                       </div>
                     </div>
                   </article>
@@ -283,6 +467,37 @@ const Share = () => {
           </section>
         </section>
       </Container>
+      {deleteTargetId && (
+        <Modal
+          setOpenModal={() => setDeleteTargetId("")}
+          openModal={deleteTargetId !== ""}
+        >
+          <section className={styled.confirm}>
+            <h3 className={styled.confirmTitle}>Delete post?</h3>
+            <p className={styled.confirmText}>
+              This action can't be undone.
+            </p>
+            <div className={styled.confirmActions}>
+              <button
+                type="button"
+                className={styled.confirmCancel}
+                onClick={() => setDeleteTargetId("")}
+                disabled={deletingPostId === deleteTargetId}
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                className={styled.confirmDelete}
+                onClick={confirmDelete}
+                disabled={deletingPostId === deleteTargetId}
+              >
+                {deletingPostId === deleteTargetId ? "Deleting..." : "Delete"}
+              </button>
+            </div>
+          </section>
+        </Modal>
+      )}
     </div>
   );
 };

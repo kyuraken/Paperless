@@ -7,6 +7,57 @@
   padding: 2rem 0 4rem;
 }
 
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.settingsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.settingsTitle {
+  font-size: 1.1rem;
+  color: var(--dark-blue);
+  margin: 0;
+}
+
+.settingsToggle {
+  border: 1px solid var(--dark-blue);
+  background: transparent;
+  color: var(--dark-blue);
+  border-radius: 999px;
+  padding: 0.4rem 1.2rem;
+  cursor: pointer;
+}
+
+.settingsPanel {
+  border: 1px solid var(--light-grey);
+  border-radius: 12px;
+  padding: 1rem;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 500;
+  color: var(--dark-blue);
+}
+
+.toggle input {
+  width: 16px;
+  height: 16px;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -88,6 +139,31 @@
   gap: 1rem;
 }
 
+.postIdentity {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarFallback {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--light-grey);
+  color: var(--dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
 .postMeta {
   display: flex;
   flex-direction: column;
@@ -104,13 +180,113 @@
   color: var(--med-grey);
 }
 
+.postActions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
 .edit {
+  background: var(--dark-blue);
+  border: 1px solid var(--dark-blue);
+  color: var(--white);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.delete {
   background: transparent;
   border: 1px solid var(--dark-blue);
   color: var(--dark-blue);
   padding: 0.4rem 1rem;
   border-radius: 999px;
   cursor: pointer;
+}
+
+.edit:disabled,
+.delete:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.confirmTitle {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--dark-blue);
+}
+
+.confirmText {
+  margin: 0;
+  color: var(--med-grey);
+}
+
+.confirmActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.confirmDelete {
+  background: var(--dark-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 999px;
+  padding: 0.4rem 1.2rem;
+  cursor: pointer;
+}
+
+.confirmCancel {
+  background: transparent;
+  color: var(--dark-blue);
+  border: 1px solid var(--dark-blue);
+  border-radius: 999px;
+  padding: 0.4rem 1.2rem;
+  cursor: pointer;
+}
+
+.confirmDelete:disabled,
+.confirmCancel:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.likeRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.likeButton {
+  background: transparent;
+  border: 1px solid var(--dark-blue);
+  color: var(--dark-blue);
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.likeButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.likeCount {
+  font-size: 0.9rem;
+  color: var(--med-grey);
+}
+
+.likesHidden {
+  font-size: 0.85rem;
+  color: var(--med-grey);
+  margin-top: 0.75rem;
 }
 
 .postContent {
