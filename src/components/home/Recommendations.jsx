@@ -4,7 +4,7 @@ import styled from "./Recommendations.module.css";
 
 const Recommendations = () => {
   //get books from explorebooks
-  const picks = useExplore("Picks");
+  const picks = useExplore("HomePicks");
 
   //only get 6 books
   const limitPicks = picks?.slice(0, 6);

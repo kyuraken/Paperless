@@ -11,5 +11,5 @@
 }
 
 .button:hover {
-  background-color: goldenrod;
+  background-color: var(--dark-blue);
 }

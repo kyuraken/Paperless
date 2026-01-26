@@ -25,7 +25,7 @@ export const exploreBooks = [
     textSnippet:
       "Humanity’s last survivors live behind massive walls to protect themselves from the terrifying Titans that roam beyond. When the walls fall, Eren Yeager vows to fight back and uncover the truth behind the Titans in this action-packed manga epic."
   },
-  subject: ["Picks", "Manga", "Anime"],
+  subject: ["HomePicks", "Picks", "Manga", "Anime"],
 }
 ,
 
@@ -1090,7 +1090,7 @@ export const exploreBooks = [
       textSnippet:
         "A witty, heartfelt light novel about rumors, first love, and the mysterious Bunny Girl Senpai.",
     },
-    subject: ["Picks", "Romance"],
+    subject: ["HomePicks", "Picks", "Romance"],
   },
 
   {
@@ -1111,7 +1111,7 @@ export const exploreBooks = [
       textSnippet:
         "A young man sells his remaining life and meets a woman who changes everything.",
     },
-    subject: ["Picks", "Romance"],
+    subject: ["HomePicks", "Picks", "Romance"],
   },
 
   {
@@ -1615,7 +1615,7 @@ export const exploreBooks = [
       textSnippet:
         "A young wizard discovers his past and begins his first year at Hogwarts.",
     },
-    subject: ["Picks", "Fantasy"],
+    subject: ["HomePicks", "Picks", "Fantasy"],
   },
 
   {
@@ -1657,7 +1657,7 @@ export const exploreBooks = [
       textSnippet:
         "A dark coming-of-age story following Punpun through love, loss, and growing up.",
     },
-    subject: ["Picks", "Manga"],
+    subject: ["HomePicks", "Picks", "Manga"],
   },
 
   {
@@ -1720,7 +1720,7 @@ export const exploreBooks = [
       textSnippet:
         "A former bully seeks redemption from the girl he once tormented.",
     },
-    subject: ["Picks", "Manga"],
+    subject: ["HomePicks", "Picks", "Manga"],
   },
 
   {
