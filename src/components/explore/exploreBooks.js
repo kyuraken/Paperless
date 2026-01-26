@@ -25,7 +25,7 @@ export const exploreBooks = [
     textSnippet:
       "Humanity’s last survivors live behind massive walls to protect themselves from the terrifying Titans that roam beyond. When the walls fall, Eren Yeager vows to fight back and uncover the truth behind the Titans in this action-packed manga epic."
   },
-  subject: ["Picks", "Manga", "Anime", "Fantasy"]
+  subject: ["Picks", "Manga", "Anime"],
 }
 ,
 
@@ -52,7 +52,7 @@ export const exploreBooks = [
       textSnippet:
         "An honest, evocative, and tender novel, It Ends with Us is “a glorious and touching read, a forever keeper. The kind of book that gets handed down” (USA TODAY).",
     },
-    subject: ["Picks", "Romance", "Colleen Hoover"],
+    subject: ["Picks", "Colleen Hoover"],
   },
 
   {
@@ -81,7 +81,7 @@ export const exploreBooks = [
       textSnippet:
         "From Colleen Hoover, the #1 New York Times bestselling author of It Ends With Us, a heart-wrenching love story that proves attraction at first sight can be messy.",
     },
-    subject: ["Picks", "Romance", "Colleen Hoover"],
+    subject: ["Picks", "Colleen Hoover"],
   },
 
   {
@@ -106,7 +106,7 @@ export const exploreBooks = [
       },
     },
 
-    subject: ["Picks", "Romance", "Colleen Hoover"],
+    subject: ["Picks", "Colleen Hoover"],
   },
 
   {
@@ -134,7 +134,7 @@ export const exploreBooks = [
       textSnippet:
         "&quot;This book club in a box contains 7 stand alone titles of Colleen Hoover.",
     },
-    subject: ["Picks", "Romance", "Colleen Hoover"],
+    subject: ["Picks", "Colleen Hoover"],
   },
 
   {
@@ -151,7 +151,7 @@ export const exploreBooks = [
           "http://books.google.com/books/content?id=o5lDEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
       },
     },
-    subject: ["Picks", "Romance", "Easy Reads"],
+    subject: ["Picks", "Easy Reads"],
   },
 
   {
@@ -212,7 +212,7 @@ export const exploreBooks = [
           "http://books.google.com/books/content?id=DKWGDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
       },
     },
-    subject: ["Picks", "Romance", "Easy Reads", "Helen", "Tiktok"],
+    subject: ["Picks", "Easy Reads", "Helen", "Tiktok"],
   },
 
   {
@@ -264,7 +264,7 @@ export const exploreBooks = [
       textSnippet:
         "&quot;Two enemies team up to flip a house ... and the sparks between them will either burn the place down or ignite a passion they can&#39;t resist&quot;--Jacket flap.",
     },
-    subject: ["Picks", "Romance", "Helen", "Easy Reads", "Tiktok"],
+    subject: ["Picks", "Helen", "Easy Reads", "Tiktok"],
   },
 
   {
@@ -290,7 +290,7 @@ export const exploreBooks = [
       textSnippet:
         "Maybe she doesn&#39;t hate him. And just maybe, he doesn&#39;t hate her either. Or maybe this is just another game . . . &#39;A brilliant, biting, hilarious new voice. The Hating Game will take the romcom world by storm.",
     },
-    subject: ["Picks", "Tiktok", "Romance", "Helen", "Easy Reads"],
+    subject: ["Picks", "Tiktok", "Helen", "Easy Reads"],
   },
 
   {
@@ -669,7 +669,7 @@ export const exploreBooks = [
       textSnippet:
         "Sarah J. Maas&#39;s sexy, richly imagined series continues with the journey of Feyre&#39;s fiery sister, Nesta.",
     },
-    subject: ["Picks", "Fantasy", "Fiction", "Tiktok"],
+    subject: ["Picks", "Fiction", "Tiktok"],
   },
 
   {
@@ -690,7 +690,7 @@ export const exploreBooks = [
       textSnippet:
         "A hugely commercial, fabulously addictive fantastical romp - from an author with top-notch digital self-publishing pedigree and legions of fans awaiting publication",
     },
-    subject: ["Picks", "Fantasy", "Fiction"],
+    subject: ["Picks", "Fiction"],
   },
 
   {
@@ -711,7 +711,7 @@ export const exploreBooks = [
       textSnippet:
         "An instant New York Times bestseller! Juliette and Warner’s story continues in the electrifying fourth installment of Tahereh Mafi’s bestselling Shatter Me series.",
     },
-    subject: ["Picks", "Fantasy", "Tiktok"],
+    subject: ["Picks", "Tiktok"],
   },
 
   {
@@ -732,7 +732,7 @@ export const exploreBooks = [
       textSnippet:
         "In this electrifying debut, Tahereh Mafi presents a riveting dystopian world, a thrilling superhero story, and an unforgettable heroine.",
     },
-    subject: ["Picks", "Fiction", "Fantasy"],
+    subject: ["Picks", "Fiction"],
   },
 
   {
@@ -753,7 +753,7 @@ export const exploreBooks = [
       textSnippet:
         "The book that all Shatter Me fans have been waiting for is finally here.",
     },
-    subject: ["Picks", "Fantasy"],
+    subject: ["Picks"],
   },
 
   {
@@ -775,7 +775,7 @@ export const exploreBooks = [
       textSnippet:
         "The captivating third book in Kiera Cass’s #1 New York Times bestselling Selection series America Singer searches for her happily ever after in this swoon-worthy YA dystopian romance, perfect for readers who loved Veronica Roth’s ...",
     },
-    subject: ["Picks", "Fantasy", "Fiction", "Tiktok"],
+    subject: ["Picks", "Fiction", "Tiktok"],
   },
 
   {
@@ -797,7 +797,7 @@ export const exploreBooks = [
         "For thirty-five girls, the Selection is the chance of a lifetime.",
     },
 
-    subject: ["Picks", "Fiction", "Fantasy", "Tiktok"],
+    subject: ["Picks", "Fiction", "Tiktok"],
   },
 
   {
@@ -817,7 +817,7 @@ export const exploreBooks = [
       textSnippet:
         "Twenty years ago, America Singer entered the Selection and won Prince Maxon&#39;s heart.",
     },
-    subject: ["Picks", "Fantasy"],
+    subject: ["Picks"],
   },
 
   {
@@ -838,7 +838,7 @@ export const exploreBooks = [
       textSnippet:
         "A Time Best YA Book of All Time (2021) Two teens must learn the “art of killing” in this Printz Honor–winning book, the first in a chilling new series from Neal Shusterman, author of the New York Times bestselling Unwind dystology.",
     },
-    subject: ["Picks", "Fantasy", "Tiktok", "Fiction"],
+    subject: ["Picks", "Tiktok", "Fiction"],
   },
 
   {
@@ -859,7 +859,7 @@ export const exploreBooks = [
       textSnippet:
         "“Intelligent and entertaining.” —Kirkus Reviews (starred review) “Even better than the first book.” —School Library Journal (starred review) Rowan and Citra take opposite stances on the morality of the Scythedom, putting them at ...",
     },
-    subject: ["Picks", "Fiction", "Fantasy"],
+    subject: ["Picks", "Fiction"],
   },
 
   {
@@ -880,7 +880,7 @@ export const exploreBooks = [
       textSnippet:
         "&quot;Fan favorite Scarlett St. Clair expands her universe of New Greece and the Hades and Persephone retellings with a new series told in Hades&#39;s point of view.",
     },
-    subject: ["Picks", "Fantasy", "Fiction"],
+    subject: ["Picks", "Fiction"],
   },
 
   {
@@ -901,7 +901,7 @@ export const exploreBooks = [
       textSnippet:
         "From bestselling author Scarlett St. Clair comes a dark and enthralling reimagining of the Hades and Persephone Greek myth.",
     },
-    subject: ["Picks", "Fantasy"],
+    subject: ["Picks"],
   },
 
   {
@@ -922,7 +922,7 @@ export const exploreBooks = [
       textSnippet:
         "The next installment in the Hades and Persephone story from bestselling author Scarlett St. Clair.",
     },
-    subject: ["Picks", "Fantasy"],
+    subject: ["Picks"],
   },
 
   //Booktok
@@ -985,7 +985,7 @@ export const exploreBooks = [
       textSnippet:
         "A brand new romantic comedy from New York Times bestseller Tessa Bailey!",
     },
-    subject: ["Picks", "Tiktok", "Romance", "Easy Reads", "Fiction"],
+    subject: ["Picks", "Tiktok", "Easy Reads", "Fiction"],
   },
 
   {
@@ -1005,7 +1005,7 @@ export const exploreBooks = [
       textSnippet:
         "&quot;Tessa Bailey is back with a Schitt&#39;s Creek-inspired rom-com about a Hollywood &quot;It Girl&quot; who&#39;s cut off from her wealthy family and exiled to a small Pacific Northwest beach town ... where she butts heads with a surly, sexy local who thinks ...",
     },
-    subject: ["Picks", "Fiction", "Romance", "Tiktok", "Easy Reads"],
+    subject: ["Picks", "Fiction", "Tiktok", "Easy Reads"],
   },
 
   {
@@ -1073,6 +1073,196 @@ export const exploreBooks = [
   },
 
   {
+    id: "qoTYDwAAQBAJ",
+    volumeInfo: {
+      title: "Rascal Does Not Dream of Bunny Girl Senpai",
+      authors: ["Hajime Kamoshida"],
+      publishedDate: "2016-04-10",
+      categories: ["Light Novel"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=qoTYDwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=qoTYDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A witty, heartfelt light novel about rumors, first love, and the mysterious Bunny Girl Senpai.",
+    },
+    subject: ["Picks", "Romance"],
+  },
+
+  {
+    id: "I9zwDwAAQBAJ",
+    volumeInfo: {
+      title: "Three Days of Happiness",
+      authors: ["Sugaru Miaki"],
+      publishedDate: "2017-11-21",
+      categories: ["Fiction"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=I9zwDwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=I9zwDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A young man sells his remaining life and meets a woman who changes everything.",
+    },
+    subject: ["Picks", "Romance"],
+  },
+
+  {
+    id: "Vv0og8FYLc8C",
+    volumeInfo: {
+      title: "The Notebook",
+      authors: ["Nicholas Sparks"],
+      publishedDate: "1996-10-01",
+      categories: ["Romance"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=Vv0og8FYLc8C&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=Vv0og8FYLc8C&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A sweeping love story about devotion, memory, and second chances.",
+    },
+    subject: ["Picks", "Romance"],
+  },
+
+  {
+    id: "P3TZCwAAQBAJ",
+    volumeInfo: {
+      title: "Me Before You",
+      authors: ["Jojo Moyes"],
+      publishedDate: "2012-01-05",
+      categories: ["Romance"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=P3TZCwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=P3TZCwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A life-changing romance between a caretaker and the man she never expected to love.",
+    },
+    subject: ["Picks", "Romance"],
+  },
+
+  {
+    id: "X8qKWU08Vp0C",
+    volumeInfo: {
+      title: "Outlander",
+      authors: ["Diana Gabaldon"],
+      publishedDate: "1991-06-01",
+      categories: ["Romance"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=X8qKWU08Vp0C&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=X8qKWU08Vp0C&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A time-traveling love story set in the Scottish Highlands.",
+    },
+    subject: ["Picks", "Romance"],
+  },
+
+  {
+    id: "vDTgDwAAQBAJ",
+    volumeInfo: {
+      title: "Beach Read",
+      authors: ["Emily Henry"],
+      publishedDate: "2020-05-19",
+      categories: ["Romance"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=vDTgDwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=vDTgDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "Two writers swap genres for the summer and fall into a slow-burn romance.",
+    },
+    subject: ["Picks", "Romance"],
+  },
+
+  {
+    id: "5fooEAAAQBAJ",
+    volumeInfo: {
+      title: "People We Meet on Vacation",
+      authors: ["Emily Henry"],
+      publishedDate: "2021-05-11",
+      categories: ["Romance"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=5fooEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=5fooEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "Best friends and annual travel buddies navigate the feelings they never confessed.",
+    },
+    subject: ["Picks", "Romance"],
+  },
+
+  {
+    id: "a6VXEAAAQBAJ",
+    volumeInfo: {
+      title: "The Spanish Love Deception",
+      authors: ["Elena Armas"],
+      publishedDate: "2021-02-23",
+      categories: ["Romance"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=a6VXEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=a6VXEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A fake date to a wedding turns into a slow-burn office romance.",
+    },
+    subject: ["Picks", "Romance"],
+  },
+
+  {
+    id: "zUL6AAAAQBAJ",
+    volumeInfo: {
+      title: "The Rosie Project",
+      authors: ["Graeme Simsion"],
+      publishedDate: "2013-01-30",
+      categories: ["Romance"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=zUL6AAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=zUL6AAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A quirky genetics professor creates a questionnaire to find love and meets his match.",
+    },
+    subject: ["Picks", "Romance"],
+  },
+
+
+  {
     id: "OlCHcjX0RT4C",
     volumeInfo: {
       title: "The Hobbit",
@@ -1090,7 +1280,7 @@ export const exploreBooks = [
       textSnippet:
         "Bilbo Baggins is swept into a quest with dwarves, a dragon, and a dangerous ring.",
     },
-    subject: ["Picks", "Fantasy"],
+    subject: ["Picks"],
   },
 
   {
@@ -1111,7 +1301,7 @@ export const exploreBooks = [
       textSnippet:
         "A street thief discovers her power and joins a rebellion against a tyrant.",
     },
-    subject: ["Picks", "Fantasy"],
+    subject: ["Picks"],
   },
 
   {
@@ -1239,4 +1429,382 @@ export const exploreBooks = [
     },
     subject: ["Picks", "Manga"],
   },
+  {
+    id: "QD8uygAACAAJ",
+    volumeInfo: {
+      title: "The Name of the Wind",
+      authors: ["Patrick Rothfuss"],
+      publishedDate: "2007-03-27",
+      categories: ["Fantasy"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=QD8uygAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=QD8uygAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A gifted young man grows into a legend, telling the true story behind the myth.",
+    },
+    subject: ["Picks", "Fantasy"],
+  },
+
+  {
+    id: "d-nv9nnEnVwC",
+    volumeInfo: {
+      title: "The Way of Kings",
+      authors: ["Brandon Sanderson"],
+      publishedDate: "2010-08-31",
+      categories: ["Fantasy"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=d-nv9nnEnVwC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=d-nv9nnEnVwC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "War, politics, and ancient secrets collide on a storm-lashed world.",
+    },
+    subject: ["Picks", "Fantasy"],
+  },
+
+  {
+    id: "rpLxEAAAQBAJ",
+    volumeInfo: {
+      title: "The Lies of Locke Lamora",
+      authors: ["Scott Lynch"],
+      publishedDate: "2006-06-27",
+      categories: ["Fantasy"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=rpLxEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=rpLxEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A master thief and his crew pull off audacious cons in a lush, dangerous city.",
+    },
+    subject: ["Picks", "Fantasy"],
+  },
+
+  {
+    id: "49RdDwAAQBAJ",
+    volumeInfo: {
+      title: "The Priory of the Orange Tree",
+      authors: ["Samantha Shannon"],
+      publishedDate: "2019-02-26",
+      categories: ["Fantasy"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=49RdDwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=49RdDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A divided world, ancient dragons, and a secret order of mage-queens.",
+    },
+    subject: ["Picks", "Fantasy"],
+  },
+
+  {
+    id: "-RGkDgAAQBAJ",
+    volumeInfo: {
+      title: "The Cruel Prince",
+      authors: ["Holly Black"],
+      publishedDate: "2018-01-02",
+      categories: ["Fantasy"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=-RGkDgAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=-RGkDgAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A mortal girl navigates deadly fae politics and a rival prince.",
+    },
+    subject: ["Picks", "Fantasy"],
+  },
+
+  {
+    id: "sjqyEAAAQBAJ",
+    volumeInfo: {
+      title: "The Poppy War",
+      authors: ["R. F. Kuang"],
+      publishedDate: "2018-05-01",
+      categories: ["Fantasy"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=sjqyEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=sjqyEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A war orphan discovers a terrifying power in a brutal military academy.",
+    },
+    subject: ["Picks", "Fantasy"],
+  },
+
+  {
+    id: "Lwg5AgAAQBAJ",
+    volumeInfo: {
+      title: "The Blade Itself",
+      authors: ["Joe Abercrombie"],
+      publishedDate: "2006-05-04",
+      categories: ["Fantasy"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=Lwg5AgAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=Lwg5AgAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A dark, gritty fantasy of barbarians, torturers, and reluctant heroes.",
+    },
+    subject: ["Picks", "Fantasy"],
+  },
+
+  {
+    id: "J0tIAgAAQBAJ",
+    volumeInfo: {
+      title: "The Fifth Season",
+      authors: ["N. K. Jemisin"],
+      publishedDate: "2015-08-04",
+      categories: ["Fantasy"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=J0tIAgAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=J0tIAgAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A world-ending season begins, and a mother searches for her missing daughter.",
+    },
+    subject: ["Picks", "Fantasy"],
+  },
+
+  {
+    id: "xOTtugEACAAJ",
+    volumeInfo: {
+      title: "Harry Potter and the Sorcerer's Stone",
+      authors: ["J. K. Rowling"],
+      publishedDate: "1998-09-01",
+      categories: ["Fantasy"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=xOTtugEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=xOTtugEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A young wizard discovers his past and begins his first year at Hogwarts.",
+    },
+    subject: ["Picks", "Fantasy"],
+  },
+
+  {
+    id: "ptHZAAAAMAAJ",
+    volumeInfo: {
+      title: "The Lord of the Rings",
+      authors: ["J. R. R. Tolkien"],
+      publishedDate: "1954-07-29",
+      categories: ["Fantasy"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=ptHZAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=ptHZAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "Frodo and the Fellowship set out to destroy the One Ring in Mordor.",
+    },
+    subject: ["Picks", "Fantasy"],
+  },
+
+  {
+    id: "CxeCCwAAQBAJ",
+    volumeInfo: {
+      title: "Goodnight Punpun, Vol. 1",
+      authors: ["Inio Asano"],
+      publishedDate: "2007-08-03",
+      categories: ["Comics & Graphic Novels"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=CxeCCwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=CxeCCwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A dark coming-of-age story following Punpun through love, loss, and growing up.",
+    },
+    subject: ["Picks", "Manga"],
+  },
+
+  {
+    id: "My2UEAAAQBAJ",
+    volumeInfo: {
+      title: "Oshi no Ko, Vol. 1",
+      authors: ["Aka Akasaka"],
+      publishedDate: "2023-01-17",
+      categories: ["Comics & Graphic Novels"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=My2UEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=My2UEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A reincarnation twist plunges a doctor into the bright and brutal idol industry.",
+    },
+    subject: ["Picks", "Manga"],
+  },
+
+  {
+    id: "pYLwAQAAQBAJ",
+    volumeInfo: {
+      title: "Death Note, Vol. 1",
+      authors: ["Tsugumi Ohba"],
+      publishedDate: "2004-10-10",
+      categories: ["Comics & Graphic Novels"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=pYLwAQAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=pYLwAQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A student finds a notebook that lets him kill anyone whose name he writes.",
+    },
+    subject: ["Picks", "Manga"],
+  },
+
+  {
+    id: "zBrzDQAAQBAJ",
+    volumeInfo: {
+      title: "A Silent Voice",
+      authors: ["Yoshitoki Oima"],
+      publishedDate: "2016-12-20",
+      categories: ["Comics & Graphic Novels"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=zBrzDQAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=zBrzDQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A former bully seeks redemption from the girl he once tormented.",
+    },
+    subject: ["Picks", "Manga"],
+  },
+
+  {
+    id: "omSsEAAAQBAJ",
+    volumeInfo: {
+      title: "Takopi's Original Sin",
+      authors: ["Taizan5"],
+      publishedDate: "2022-09-13",
+      categories: ["Comics & Graphic Novels"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=omSsEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=omSsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A naive alien tries to make a lonely girl smile, with devastating consequences.",
+    },
+    subject: ["Picks", "Manga"],
+  },
+
+  {
+    id: "3HRHwwEACAAJ",
+    volumeInfo: {
+      title: "Jujutsu Kaisen, Vol. 1",
+      authors: ["Gege Akutami"],
+      publishedDate: "2019-12-03",
+      categories: ["Comics & Graphic Novels"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=3HRHwwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=3HRHwwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A teen swallows a cursed object and becomes host to a deadly curse.",
+    },
+    subject: ["Picks", "Manga"],
+  },
+
+  {
+    id: "ud3lDwAAQBAJ",
+    volumeInfo: {
+      title: "Spy x Family, Vol. 1",
+      authors: ["Tatsuya Endo"],
+      publishedDate: "2019-10-01",
+      categories: ["Comics & Graphic Novels"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=ud3lDwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=ud3lDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A spy, an assassin, and a telepath form a fake family with real stakes.",
+    },
+    subject: ["Picks", "Manga"],
+  },
+
+  {
+    id: "54T-DwAAQBAJ",
+    volumeInfo: {
+      title: "Chainsaw Man, Vol. 1",
+      authors: ["Tatsuki Fujimoto"],
+      publishedDate: "2020-10-06",
+      categories: ["Comics & Graphic Novels"],
+      imageLinks: {
+        smallThumbnail:
+          "http://books.google.com/books/content?id=54T-DwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        thumbnail:
+          "http://books.google.com/books/content?id=54T-DwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+    },
+    searchInfo: {
+      textSnippet:
+        "A devil hunter with a chainsaw demon pet becomes something more.",
+    },
+    subject: ["Picks", "Manga"],
+  },
+
 ];
