@@ -14,9 +14,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateLibrary } from "../../store/features/library/librarySlice";
 import { updateShelf } from "../../store/features/shelf/shelfSlice";
 import Loading from "../helpers/loading/Loading";
-import { booksCollection } from "../firebase/firebase-config";
-import { onSnapshot, query, where } from "firebase/firestore";
+import { doc, onSnapshot } from "firebase/firestore";
 import { toast } from "react-toastify";
+import { database } from "../firebase/firebase-config";
+
 
 const Pages = () => {
   const { feedback } = useSelector((state) => state.bookStore);
@@ -27,16 +28,35 @@ const Pages = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // query to find data for the current user
-    const request = query(booksCollection, where("id", "==", `${user}`));
-
-    // get document from firebase
-    const unsub = onSnapshot(request, (snapshot) => {
-      setDataForUser(
-        snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-      );
+    if (!user) {
+      setDataForUser([]);
       setLoading(false);
-    });
+      return;
+    }
+
+    setLoading(true);
+    // query to find data for the current user
+    const userDocRef = doc(database, "books", user); // user should be uid string
+
+    const unsub = onSnapshot(
+      userDocRef,
+      (snap) => {
+        if (snap.exists()) {
+          setDataForUser([{ id: snap.id, ...snap.data() }]);
+        } else {
+          setDataForUser([]); // no doc yet for this user
+        }
+        setLoading(false);
+      },
+      (error) => {
+        setLoading(false);
+        if (error?.code === "permission-denied") {
+          toast.error("Firestore permission denied. Check your rules.");
+        } else {
+          toast.error(error?.message || "Failed to load your data.");
+        }
+      }
+    );
 
     // clean up, unsubscribe from listener
     return () => unsub();

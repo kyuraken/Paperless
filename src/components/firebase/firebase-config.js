@@ -38,16 +38,25 @@ export const booksCollection = collection(database, "books");
 // library: array of books
 // shelf: object representing shelf data
 export const addDataToFirebase = async (id, library, shelf) => {
+  if (!id) return;
+
   // Create a reference to a specific document in "books" collection
   const currentDoc = doc(database, "books", `${id}`);
 
   // Write data to Firestore
   // merge: true ensures existing fields are not overwritten
-  await setDoc(
-    currentDoc,
-    { id, library: [...library], shelf: { ...shelf } },
-    { merge: true }
-  );
+  try {
+    await setDoc(
+      currentDoc,
+      { id, library: [...library], shelf: { ...shelf } },
+      { merge: true }
+    );
+  } catch (error) {
+    toast.error(error?.message || "Failed to save your data.", {
+      autoClose: 5000,
+    });
+    throw error;
+  }
 };
 
 // Function to sign the user out

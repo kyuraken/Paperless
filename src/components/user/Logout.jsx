@@ -2,10 +2,10 @@ import React from "react";
 import styled from "./Logout.module.css";
 import { TbLogout } from "react-icons/tb";
 import { MdCancel } from "react-icons/md";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Container from "../helpers/container/Container";
-import { signUserOut } from "../firebase/firebase-config";
+import { addDataToFirebase, signUserOut } from "../firebase/firebase-config";
 import { clearLibrary } from "../../store/features/library/librarySlice";
 import { clearShelf } from "../../store/features/shelf/shelfSlice";
 import { setUser } from "../../store/features/auth/authSlice";
@@ -13,6 +13,9 @@ import { setUser } from "../../store/features/auth/authSlice";
 const Logout = (props) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { user } = useSelector((state) => state.auth);
+  const { library } = useSelector((state) => state.bookStore);
+  const { shelf } = useSelector((state) => state.bookShelf);
   const { setOpenLogoutModal } = props;
 
   // close modal
@@ -20,6 +23,11 @@ const Logout = (props) => {
 
   //  sign user out and clear library and shelf
   const handleLogout = async () => {
+    try {
+      await addDataToFirebase(user, library, shelf);
+    } catch (error) {
+      // Keep logout flow even if saving fails.
+    }
     await signUserOut();
     dispatch(setUser({}));
     dispatch(clearLibrary());
