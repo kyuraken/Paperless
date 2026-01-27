@@ -1,8 +1,8 @@
-#Paperless
+# Paperless
 
 Paperless is a full-stack web application that allows users to discover, organize, and manage their personal book collections in one place. The app integrates real-time data storage and secure authentication to provide a seamless digital bookshelf experience.
 
-#Features
+# Features
 
 Book Search
 Search for books by title, author, or keywords using the Google Books API.
