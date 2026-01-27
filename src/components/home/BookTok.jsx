@@ -14,7 +14,7 @@ const Booktok = () => {
   // props for heading component
   const heading = (
     <>
-      What side of <span>social media</span> are you on?
+      Share what others are <span>currently reading</span>
     </>
   );
 
@@ -29,8 +29,9 @@ const Booktok = () => {
             <Heading className="heading-md" text={heading} />
 
             <p className="para">
-Social media made me read it! We’re staying up to date with trending book content and making it easy for you to see what’s going viral. 
-Add these popular books to your collection and keep up with the latest must-reads.
+              Share your post of what you are currently reading with others.
+              Add a comment, publish your post, and see what the community is
+              reading right now.
             </p>
             <Button onClick={handleClick}>Explore</Button>
           </article>
