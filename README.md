@@ -1,9 +1,23 @@
-# Paperless
+#Paperless
 
-## Paperless | Your Online Bookshelf
+Paperless is a full-stack web application that allows users to discover, organize, and manage their personal book collections in one place. The app integrates real-time data storage and secure authentication to provide a seamless digital bookshelf experience.
 
-## Todos
+#Features
 
-Add a filter button for the search bar to sort by author, title, etc.
-Fix the text on user home and normal home
-Not all books display when search by author
+Book Search
+Search for books by title, author, or keywords using the Google Books API.
+
+Personal Library
+Save books to a personal collection that persists across sessions.
+
+User Authentication
+Secure sign-in and account management using Firebase Authentication.
+
+Book Details
+View detailed book metadata including authors, descriptions, publication dates, and cover images.
+
+Real-Time Sync
+User data updates instantly using Firebase Firestore.
+
+Responsive UI
+Optimized for both desktop and mobile devices.
