@@ -211,14 +211,6 @@ const Share = () => {
     setDeleteTargetId("");
   };
 
-  const getInitials = (name) => {
-    if (!name) return "A";
-    const parts = name.trim().split(" ").filter(Boolean);
-    const first = parts[0]?.[0] || "";
-    const last = parts.length > 1 ? parts[parts.length - 1][0] : "";
-    return `${first}${last}`.toUpperCase() || "A";
-  };
-
   const formatDate = (value) => {
     if (!value) return "";
     if (typeof value === "number") {
@@ -358,7 +350,6 @@ const Share = () => {
                 const avatarUrl = post.isAnonymous
                   ? ""
                   : post.userPhoto || (canEdit ? profile.photo : "") || "";
-                const initials = getInitials(displayName);
                 const likes = Array.isArray(post.likes) ? post.likes : [];
                 const likeCount = likes.length;
                 const hasLiked = likes.includes(user);
