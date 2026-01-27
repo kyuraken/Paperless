@@ -16,23 +16,31 @@ const LibraryNav = ({ searchParams, setSearchParams }) => {
     if (link) setSearchParams({ category: link });
   }, [link, setSearchParams]);
 
-  const navLinks = links.map((link) => {
+  const navLinks = links.map((link, index) => {
     const active =
       urlParam === link || (urlParam === "To Be Read" && link === "TBR");
     return (
-      <p
+      <button
         key={link}
+        type="button"
         onClick={() => handleLink(link)}
-        className={active ? styled.active : styled.link}
+        className={`${styled.chip} ${active ? styled.active : ""}`}
+        style={{ "--i": index }}
       >
-        {link}
-      </p>
+        <span className={styled.dot} aria-hidden="true" />
+        {link === "TBR" ? "To Be Read" : link}
+      </button>
     );
   });
 
   return (
     <nav className={styled["library-navbar"]}>
-      <h1>Your Library</h1>
+      <div className={styled["library-head"]}>
+        <div className={styled["library-title"]}>
+          <span className={styled.eyebrow}>Library filters</span>
+          <span className={styled.title}>Your library</span>
+        </div>
+      </div>
       <div className={styled["library-links"]}>{navLinks}</div>
     </nav>
   );

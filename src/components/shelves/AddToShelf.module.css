@@ -1,32 +1,50 @@
 .add-to-shelf-container {
     position: fixed;
-    bottom: 10px;
+    bottom: 40px;
     left: 0px;
     width: 100%;
+    padding: 0 1rem;
 }
 
 .add-to-shelf {
-    background-color: var(--white);
-    width: 95%;
-    max-width: 600px;
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(231, 238, 247, 0.9));
+    width: 100%;
+    max-width: 640px;
     margin: 0 auto;
-    border-radius: 10px;
-    padding: 2rem 1rem;
+    border-radius: 18px;
+    padding: 2.2rem 1.5rem 1.8rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    border: 1px solid rgba(11, 31, 59, 0.12);
+    box-shadow: 0 18px 36px rgba(11, 31, 59, 0.18);
+    overflow: hidden;
+}
+
+.add-to-shelf::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top right, rgba(11, 31, 59, 0.08), transparent 40%),
+        radial-gradient(circle at 10% 80%, rgba(200, 224, 235, 0.6), transparent 45%);
+    opacity: 0.8;
+    pointer-events: none;
 }
 
 .add-to-shelf h2,
 .add-to-shelf span {
-    font-size: 1.2rem;
+    position: relative;
+    z-index: 1;
+    font-size: 1.1rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.9rem;
     color: var(--dark-blue);
-    max-width: 300px;
-    font-family: "Roboto", sans-serif;
+    max-width: 320px;
+    font-family: "Didact Gothic", sans-serif;
 }
 
 .add-to-shelf span {
@@ -34,9 +52,12 @@
 }
 
 .add-to-shelf figure {
-    width: 65%;
-    max-width: 200px;
-    margin: 1rem auto;
+    position: relative;
+    z-index: 1;
+    width: 55%;
+    max-width: 210px;
+    margin: 0.8rem auto 0.3rem;
+    filter: drop-shadow(0 12px 18px rgba(11, 31, 59, 0.12));
 }
 
 .add-to-shelf img {
@@ -44,53 +65,85 @@
 }
 
 .allShelves {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
     justify-content: center;
     align-items: center;
-    padding-top: 0.875rem;
-    max-height: 120px;
-    overflow-y: scroll;
-    /* scrollbar-width: none; */
-    padding: 1rem 0;
+    padding: 0.6rem 0.4rem 0.2rem;
+    max-height: 220px;
+    overflow-y: auto;
+    width: 100%;
 }
 
-/* .allShelves::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-} */
+.allShelves::-webkit-scrollbar {
+    width: 4px;
+}
 
-.offShelf {
-    padding: 8px 20px;
-    color: var(--dark-blue);
-    border-radius: 50px;
-    border: 1px solid var(--dark-blue);
-    width: fit-content;
+.allShelves::-webkit-scrollbar-thumb {
+    background: rgba(11, 31, 59, 0.4);
+    border-radius: 999px;
+}
+
+.offShelf,
+.onShelf {
+    appearance: none;
+    border-radius: 14px;
+    border: 1px solid rgba(11, 31, 59, 0.2);
+    padding: 0.6rem 0.8rem;
+    background: rgba(255, 255, 255, 0.9);
     cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    text-align: left;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: shelfPop 0.4s ease both;
+    animation-delay: calc(var(--i) * 0.05s);
 }
 
 .offShelf:hover {
-    background-color: var(--dark-blue);
-    color: var(--white);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 16px rgba(11, 31, 59, 0.12);
 }
 
+.offShelf:focus-visible,
+.onShelf:focus-visible {
+    outline: 2px solid rgba(11, 31, 59, 0.45);
+    outline-offset: 2px;
+}
 
 .onShelf {
-    padding: 8px 20px;
-    border-radius: 50px;
-    border: 1px solid var(--dark-blue);
-    width: fit-content;
-    cursor: pointer;
-    background-color: var(--dark-blue);
+    background: var(--dark-blue);
     color: var(--white);
+    border-color: var(--dark-blue);
+    box-shadow: 0 12px 20px rgba(11, 31, 59, 0.25);
 }
 
-/* Media Queries */
+.label {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: inherit;
+}
+
+@keyframes shelfPop {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 @media (min-width:600px) {
     .add-to-shelf-container {
         position: relative;
+        bottom: auto;
     }
 
     .add-to-shelf {

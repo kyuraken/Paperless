@@ -45,3 +45,13 @@
 .add {
     cursor: pointer;
 } */
+
+.shelves {
+    padding-bottom: 260px;
+}
+
+@media (min-width: 600px) {
+    .shelves {
+        padding-bottom: 200px;
+    }
+}

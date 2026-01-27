@@ -29,18 +29,21 @@ const AddToShelf = (props) => {
   }, [dispatch, props.book, shelf]);
 
   //get all the shelves created by the current user
-  const AllShelves = shelf?.shelves?.map((shelf) => {
+  const AllShelves = shelf?.shelves?.map((shelf, index) => {
     //check if the selected book is already in the shelf
     const exists = currentBookShelves?.includes(shelf);
 
     return (
-      <p
+      <button
         key={shelf}
+        type="button"
         className={exists ? styled.onShelf : styled.offShelf}
         onClick={() => handleSelectedShelf(shelf)}
+        aria-pressed={exists}
+        style={{ "--i": index }}
       >
-        {shelf}
-      </p>
+        <span className={styled.label}>{shelf}</span>
+      </button>
     );
   });
 

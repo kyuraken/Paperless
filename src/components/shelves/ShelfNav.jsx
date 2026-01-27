@@ -26,8 +26,10 @@ const ShelfNav = ({ searchParams, setSearchParams }) => {
   //function to open context menu and set the position of the menu
   const handleContextMenu = (e) => {
     e.preventDefault();
+    const shelfLabel = e.currentTarget.dataset.shelf;
+    if (!shelfLabel) return;
     setShowContextMenu(true);
-    setSelectedShelf(e.target.innerText);
+    setSelectedShelf(shelfLabel);
     setPositions({ top: e.pageY, left: e.pageX });
   };
 
@@ -42,6 +44,7 @@ const ShelfNav = ({ searchParams, setSearchParams }) => {
 
   //get current shelf from url
   const currentShelf = searchParams.get("shelf");
+  const isAllActive = !currentShelf || currentShelf === "All";
 
   //update the search params when the shelf changes
   useEffect(() => {
@@ -51,30 +54,47 @@ const ShelfNav = ({ searchParams, setSearchParams }) => {
   }, [shelfName, setSearchParams]);
 
   // get the shelves created by the user and apply correct className to the current shelf
-  const links = shelf?.shelves?.map((shelf) => (
-    <p
+  const links = shelf?.shelves?.map((shelf, index) => (
+    <button
       key={shelf}
+      type="button"
+      data-shelf={shelf}
       onClick={() => handleShelfName(shelf)}
-      className={currentShelf === shelf ? styled.active : ""}
+      className={`${styled.chip} ${
+        currentShelf === shelf ? styled.active : ""
+      }`}
+      style={{ "--i": index + 1 }}
       onContextMenu={handleContextMenu}
     >
+      <span className={styled.dot} aria-hidden="true" />
       {shelf}
-    </p>
+    </button>
   ));
 
   return (
     <>
       <nav className={styled["shelf-navbar"]}>
-        <h2
-          onClick={() => setShelfName("All")}
-          className={currentShelf === "All" ? styled.active : ""}
-        >
-          Books
-        </h2>
-        <div className={styled["shelf-links"]}>{links}</div>
-        <div className={styled.add} onClick={addHandler}>
-          <IoAddCircleSharp size="28px" color="#3f3d56" />
+        <div className={styled["shelf-head"]}>
+          <div className={styled["shelf-title"]}>
+            <span className={styled.eyebrow}>Sort your books</span>
+            <button
+              type="button"
+              className={`${styled.chip} ${styled.all} ${
+                isAllActive ? styled.active : ""
+              }`}
+              onClick={() => setShelfName("All")}
+              style={{ "--i": 0 }}
+            >
+              <span className={styled.dot} aria-hidden="true" />
+              All books
+            </button>
+          </div>
+          <button type="button" className={styled.add} onClick={addHandler}>
+            <IoAddCircleSharp size="22px" />
+            <span>New shelf</span>
+          </button>
         </div>
+        <div className={styled["shelf-links"]}>{links}</div>
       </nav>
 
       {openModal && (
