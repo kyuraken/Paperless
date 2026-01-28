@@ -29,7 +29,6 @@ const Share = () => {
   const [selectedBookId, setSelectedBookId] = useState("");
   const [posts, setPosts] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSettings, setShowSettings] = useState(false);
   const [isAnonymous, setIsAnonymous] = useState(() => {
     return localStorage.getItem("shareAnonymous") === "true";
   });
@@ -231,60 +230,6 @@ const Share = () => {
             Share your shelves and recommendations with friends in one place.
           </p>
 
-          <section className={styled.settings}>
-            <div className={styled.settingsHeader}>
-              <h2 className={styled.settingsTitle}>Settings</h2>
-              <button
-                type="button"
-                className={styled.settingsToggle}
-                onClick={() => setShowSettings((state) => !state)}
-              >
-                {showSettings ? "Hide" : "Show"}
-              </button>
-            </div>
-            {showSettings && (
-              <div className={styled.settingsPanel}>
-                <label className={styled.toggle}>
-                  <input
-                    type="checkbox"
-                    checked={isAnonymous}
-                    onChange={(event) => setIsAnonymous(event.target.checked)}
-                  />
-                  <span>Post anonymously</span>
-                </label>
-                <p className={styled.helper}>
-                  Your name will be hidden on new posts.
-                </p>
-                <label className={styled.toggle}>
-                  <input
-                    type="checkbox"
-                    checked={hideLikes}
-                    onChange={(event) => setHideLikes(event.target.checked)}
-                  />
-                  <span>Hide likes on my posts</span>
-                </label>
-                <p className={styled.helper}>
-                  When enabled, likes are disabled on new posts.
-                </p>
-                <label className={styled.label} htmlFor="custom-name">
-                  Custom name
-                </label>
-                <input
-                  id="custom-name"
-                  className={styled.input}
-                  type="text"
-                  value={customName}
-                  onChange={(event) => setCustomName(event.target.value)}
-                  placeholder="Display name for posts"
-                  disabled={isAnonymous}
-                />
-                <p className={styled.helper}>
-                  Leave blank to use your Google profile name.
-                </p>
-              </div>
-            )}
-          </section>
-
           <form className={styled.form} onSubmit={handleSubmit}>
             <label className={styled.label} htmlFor="reading-book">
               Select a book you're reading
@@ -320,9 +265,44 @@ const Share = () => {
               onChange={(event) => setComment(event.target.value)}
               placeholder="Why are you enjoying this book?"
             />
-            {isAnonymous && (
-              <p className={styled.helper}>Posting as Anonymous.</p>
-            )}
+
+            <label className={styled.toggle}>
+              <input
+                type="checkbox"
+                checked={isAnonymous}
+                onChange={(event) => setIsAnonymous(event.target.checked)}
+              />
+              <span>Post anonymously</span>
+            </label>
+            <p className={styled.helper}>
+              Your name will be hidden on new posts.
+            </p>
+            <label className={styled.toggle}>
+              <input
+                type="checkbox"
+                checked={hideLikes}
+                onChange={(event) => setHideLikes(event.target.checked)}
+              />
+              <span>Hide likes on my posts</span>
+            </label>
+            <p className={styled.helper}>
+              When enabled, likes are disabled on new posts.
+            </p>
+            <label className={styled.label} htmlFor="custom-name">
+              Custom name
+            </label>
+            <input
+              id="custom-name"
+              className={styled.input}
+              type="text"
+              value={customName}
+              onChange={(event) => setCustomName(event.target.value)}
+              placeholder="Display name for posts"
+              disabled={isAnonymous}
+            />
+            <p className={styled.helper}>
+              Leave blank to use your Google profile name.
+            </p>
 
             <button
               className={styled.submit}
