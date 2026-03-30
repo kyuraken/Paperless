@@ -1,4 +1,5 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useRef } from "react";
+import Confetti from "react-confetti";
 import Container from "../helpers/container/Container";
 import Heading from "../helpers/heading/Heading";
 import styled from "./Spotlight.module.css";
@@ -148,6 +149,9 @@ const Spotlight = () => {
   const [selectedBookId, setSelectedBookId] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [profile, setProfile] = useState({ name: "", photo: "" });
+  const [isConfettiActive, setIsConfettiActive] = useState(true);
+  const [podiumSize, setPodiumSize] = useState({ width: 0, height: 0 });
+  const podiumRef = useRef(null);
 
   // Current month key e.g. "2026-03"
   const now = new Date();
@@ -205,6 +209,14 @@ const Spotlight = () => {
     return () => unsub();
   }, []);
 
+  useEffect(() => {
+    // Stop producing new confetti after 5 seconds
+    const timer = setTimeout(() => {
+      setIsConfettiActive(false);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
   // Tally votes — group nominations by bookId and count
   const rankings = useMemo(() => {
     const tally = {};
@@ -227,6 +239,20 @@ const Spotlight = () => {
 
   // Top 3 for the podium
   const top3 = rankings.slice(0, 3);
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (podiumRef.current) {
+        setPodiumSize({
+          width: podiumRef.current.offsetWidth,
+          height: podiumRef.current.offsetHeight,
+        });
+      }
+    };
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, [top3.length]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -349,7 +375,21 @@ const Spotlight = () => {
 
           {/* Podium */}
           {top3.length > 0 && (
-            <section className={styled.podiumSection}>
+            <section 
+              className={styled.podiumSection} 
+              style={{ position: "relative" }}
+              ref={podiumRef}
+            >
+              {podiumSize.width > 0 && (
+                <Confetti
+                  width={podiumSize.width}
+              height={podiumSize.height}
+                  recycle={isConfettiActive}
+                  numberOfPieces={150}
+                  gravity={0.15}
+              style={{ position: "absolute", top: 30, left: 0, pointerEvents: "none", zIndex: 10 }}
+                />
+              )}
               <h2 className={styled.sectionHeading}>
                 Top Books — {monthLabel}
               </h2>
