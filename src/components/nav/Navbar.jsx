@@ -88,13 +88,11 @@ const Navbar = () => {
                   </Link>
                 </li>
               )}
-              {isSignedIn && (
-                <li>
-                  <Link style={navStyle} to="/spotlight">
-                    Spotlight
-                  </Link>
-                </li>
-              )}
+              <li>
+                <Link style={navStyle} to="/spotlight">
+                  Spotlight
+                </Link>
+              </li>
             </ul>
 
             <div className={styled.nav__group}>

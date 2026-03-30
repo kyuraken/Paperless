@@ -129,14 +129,7 @@ const Pages = () => {
           }
         />
 
-        <Route
-          path="/spotlight"
-          element={
-            <ProtectedRoute>
-              <Spotlight />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/spotlight" element={<Spotlight />} />
 
         <Route path="/search/:query" element={<Search />} />
         <Route path="/details/:bookId" element={<BookDetails />} />

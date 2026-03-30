@@ -59,11 +59,9 @@ const MobileMenu = (props) => {
                 <Link to="/share">Share</Link>
               </li>
             )}
-            {isSignedIn && (
-              <li>
-                <Link to="/spotlight">Spotlight</Link>
-              </li>
-            )}
+            <li>
+              <Link to="/spotlight">Spotlight</Link>
+            </li>
             <p onClick={handleLogin}>{!isSignedIn ? "Login" : "Logout"}</p>
           </ul>
         </Container>

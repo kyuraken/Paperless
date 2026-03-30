@@ -293,7 +293,13 @@ const Spotlight = () => {
           </p>
 
           {/* Nomination form */}
-          {!userNomination ? (
+          {!user ? (
+            <div className={styled.loginPrompt}>
+              <p className={styled.loginPromptText}>
+                Log in to nominate your book of the month.
+              </p>
+            </div>
+          ) : !userNomination ? (
             <form className={styled.form} onSubmit={handleSubmit}>
               <label className={styled.label} htmlFor="nominate-book">
                 Pick your book of the month
