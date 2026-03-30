@@ -7,6 +7,7 @@ import Search from "./Search";
 import Explore from "./Explore";
 import Shelves from "./Shelves";
 import Share from "./Share";
+import Spotlight from "./Spotlight";
 import NoMatch from "../helpers/routes/NoMatch";
 import BookDetails from "../books/BookDetails";
 import ProtectedRoute from "../helpers/routes/ProtectedRoute";
@@ -124,6 +125,15 @@ const Pages = () => {
           element={
             <ProtectedRoute>
               <Share />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/spotlight"
+          element={
+            <ProtectedRoute>
+              <Spotlight />
             </ProtectedRoute>
           }
         />
