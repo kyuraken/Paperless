@@ -9,7 +9,6 @@ import {
   collection,
   deleteDoc,
   doc,
-  getDocs,
   onSnapshot,
   orderBy,
   query,
@@ -370,14 +369,43 @@ const Spotlight = () => {
                       key={entry.bookData.id}
                       className={`${styled.podiumItem} ${placeClass}`}
                     >
-                      {cover && (
-                        <img
-                          className={styled.podiumCover}
-                          src={cover}
-                          alt={entry.bookData.title}
-                        />
-                      )}
-                      <div className={styled.podiumPlace}>{entry.place}</div>
+                      <div className={styled.coverWrapper}>
+                        {cover && (
+                          <img
+                            className={styled.podiumCover}
+                            src={cover}
+                            alt={entry.bookData.title}
+                          />
+                        )}
+                        {/* SVG ribbon V-shape with medal at bottom */}
+                        <svg
+                          className={styled.chainSvg}
+                          width="80"
+                          height="120"
+                          viewBox="0 0 80 120"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          
+                          <line
+                            x1="0" y1="60"
+                            x2="40" y2="110"
+                            strokeWidth="4"
+                            strokeLinecap="round"
+                            className={entry.place === 1 ? styled.chainGold : entry.place === 2 ? styled.chainSilver : styled.chainBronze}
+                          />
+                        
+                          <line
+                            x1="80" y1="60"
+                            x2="40" y2="110"
+                            strokeWidth="4"
+                            strokeLinecap="round"
+                            className={entry.place === 1 ? styled.chainGold : entry.place === 2 ? styled.chainSilver : styled.chainBronze}
+                          />
+                        </svg>
+                        <div className={styled.medal}>
+                          <div className={styled.podiumPlace}>{entry.place}</div>
+                        </div>
+                      </div>
                       <div className={styled.podiumBlock}>
                         <h3 className={styled.podiumTitle}>
                           {entry.bookData.title}
